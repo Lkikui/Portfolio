@@ -137,7 +137,7 @@
                         <div id="myModal1" class="modal">
 
                             <!-- close button -->
-                            <span class="close">&times;</span>
+                            <span class="close" id="close1">&times;</span>
 
                             <!-- modal content (img) -->
                             <img class="modal-content" id="img01">
@@ -165,13 +165,13 @@
                         <!-- modal -->
                         <div id="myModal2" class="modal">
 
-                                <!-- close button -->
-                                <span class="close">&times;</span>
-        
-                                <!-- modal content (img) -->
-                                <img class="modal-content" id="img02">
-                                <div id="caption2"></div>
-                            </div>
+                            <!-- close button -->
+                            <span class="close" id="close2">&times;</span>
+    
+                            <!-- modal content (img) -->
+                            <img class="modal-content" id="img02">
+                            <div id="caption2"></div>
+                        </div>
                         
                         <!-- GitHub Icon -->
                         <a href="https://github.com/Lkikui/ToDoList-Swift" target="_blank"><svg viewBox="0 0 128 128">
@@ -189,7 +189,17 @@
                     <!-- Project 3 -->
                     <div class="project3">
                         <h4 class="text-center">Project Title</h4>
-                        <img src="images/placeholder.jpg" class="thumbnail" alt="thumbnail">
+                        <img id="myImg3" src="images/placeholder.jpg" class="thumbnail" alt="thumbnail">
+
+                        <!-- modal -->
+                        <div id="myModal3" class="modal">
+                            <!-- close button -->
+                            <span class="close" id="close3">&times;</span>
+    
+                            <!-- modal content (img) -->
+                            <img class="modal-content" id="img03">
+                            <div id="caption3"></div>
+                        </div>
 
                         <!-- GitHub Icon -->
                         <a href="https://github.com/Lkikui/LearnUpProject" target="_blank"><svg viewBox="0 0 128 128">
@@ -269,44 +279,54 @@
             //modal
             var modal1 = document.getElementById('myModal1');
             var modal2 = document.getElementById('myModal2');
-            console.log(modal2);
+            var modal3 = document.getElementById('myModal3');
 
             var img1 = document.getElementById('myImg1');
             var img2 = document.getElementById('myImg2');
-            console.log(img2);
+            var img3 = document.getElementById('myImg3');
 
             var modalImg1 = document.getElementById('img01');
             var modalImg2 = document.getElementById('img02');
-            console.log(modalImg2);
+            var modalImg3 = document.getElementById('img03');
 
             var captionText1 = document.getElementById('caption1');
             var captionText2 = document.getElementById('caption2');
-            console.log(captionText2);
+            var captionText3 = document.getElementById('caption3');
 
             img1.onclick = function() {
-                console.log("image 1 clicked");
+                // console.log("image 1 clicked");
                 modal1.style.display = "block";
                 modalImg1.src = this.src;
                 captionText1.innerHTML = this.alt;
             }
 
             img2.onclick = function() {
-                console.log("image 2 clicked");
                 modal2.style.display = "block";
                 modalImg2.src = this.src;
                 captionText2.innerHTML = this.alt;
             }
 
-            var span = document.getElementsByClassName("close")[0];
-            console.log(span);
+            img3.onclick = function() {
+                modal3.style.display = "block";
+                modalImg3.src = this.src;
+                captionText3.innerHTML = this.alt;
+            }
             
-            span.onclick = function() {
-                if (modal1) { 
-                    console.log("modal1");
-                }
-                if (modal2) {
-                    console.log("modal2");
-                }
+            //get "x" span that closes the modal
+            var span1 = document.getElementById("close1");
+            var span2 = document.getElementById("close2");
+            var span3 = document.getElementById("close3");
+            
+            span1.onclick = function() {
+                modal1.style.display = "none";
+            }
+
+            span2.onclick = function() {
+                modal2.style.display = "none";
+            }
+
+            span3.onclick = function() {
+                modal3.style.display = "none";
             }
             
         </script>
